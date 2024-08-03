@@ -59,6 +59,20 @@ summary(apples.m)
 # Run ANOVA
 anova(apples.m)
 
+## Check assumptions ----
+
+# Checking that the residuals are normally distributed
+apples.resid <- resid(apples.m)  # Extracting the residuals
+shapiro.test(apples.resid)                   # Using the Shapiro-Wilk test
+# The null hypothesis of normal distribution is accepted: there is no significant difference (p > 0.05) from a normal distribution
+
+# Checking for homoscedasticity
+bartlett.test(apples$yield, apples$spacing2)
+bartlett.test(yield ~ spacing2, data = apples)  # Note that these two ways of writing the code give the same results
+# The null hypothesis of homoscedasticity is accepted
+
+plot(apples.m)  # you will have to press Enter in the command line to view the plots
+
 # Second dataset, sheeps ----
 sheep <- agridat::ilri.sheep   # load the data
 str(sheep)
@@ -83,3 +97,4 @@ summary(sheep.m2)
    scale_colour_manual(values = c("#FFC125", "#36648B")) +
    scale_fill_manual(values = c("#FFC125", "#36648B")) +
    theme.clean() )
+
