@@ -2,7 +2,7 @@
 #                                                          #
 ####                DATA VISUALISATION 1                ####
 ####              Course by our coding club             ####
-####      Using ggplot2 tocommunicate your results      ####
+####      Using ggplot2 to communicate your results     ####
 ####                      3.8.2024                      ####
 #                                                          #
 ##%######################################################%##
